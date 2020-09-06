@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
   <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-      <a class="navbar-brand" href="#">Dante's Web Job Lister</a>
+      <a class="navbar-brand" href="#"><?php echo SITE_TITLE; ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
