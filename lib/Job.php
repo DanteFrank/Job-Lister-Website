@@ -63,6 +63,16 @@ class Job {
 
     }
 
+    //Get Job DEtails for a single page
+    public function getJob($id) {
+        $this->db->query("SELECT * FROM jobs WHERE id = :id");
 
+        $this->db->bind(":id", $id);
+
+        //Assign ROw
+        $row = $this->db->singleSet();
+
+        return $row;
+    }
 
 }
