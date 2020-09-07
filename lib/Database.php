@@ -13,7 +13,7 @@ class Database {
 
     public function __construct() {
         //Set DSN
-        $dsn = 'mysql:host='.$this->dbhost.'dbName='.$this->dbname;
+        $dsn = 'mysql:host='. $this->dbhost.';dbname='. $this->dbname;
 
         //Set Options
         $options = array(
