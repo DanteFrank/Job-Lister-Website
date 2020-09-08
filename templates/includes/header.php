@@ -26,3 +26,5 @@
       </div>
   </div>
 </nav>
+<body>
+<?php displayMessage(); ?>
