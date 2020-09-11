@@ -17,6 +17,15 @@
         <br><br>
         </div>
     </div>
+    <div class="well">
+            <a href="edit.php?id=<?php echo $job->id; ?>" class="btn btn-primary">Edit</a>
+
+            <form style="display:inline;" action="job.php" method="post">
+                <input type="hidden" name="del_id" value="<?php echo $job->id; ?>">
+                <input type="submit" class="btn btn-danger" value="Delete" >
+            </form>
+        </div>
 </div>
+<br><br>
 
 <?php include 'includes/footer.php'; ?>

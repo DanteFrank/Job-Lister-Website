@@ -102,4 +102,55 @@ class Job {
         }
     }
 
+
+    //Delete Job
+    public function delete($id) {
+        //Insert Query
+        $this->db->query("DELETE FROM jobs WHERE id = $id");
+
+        //Execute statement
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    //Update Job Information
+    public function update($id, $data){
+         
+        //Insert Query
+        $this->db->query("UPDATE jobs
+            SET
+            category_id = :category_id,
+            company = :company,
+            job_title = :job_title,
+            description = :description,
+            salary = :salary,
+            location = :location,
+            contact_user = :contact_user,
+            contact_email = :contact_email
+            WHERE id = $id
+        ");
+         
+
+        //Bind Data
+        $this->db->bind(':category_id', $data['category_id']);
+        $this->db->bind(':company', $data['company']);
+        $this->db->bind(':job_title', $data['job_title']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':salary', $data['salary']);
+        $this->db->bind(':location', $data['location']);
+        $this->db->bind(':contact_user', $data['contact_user']);
+        $this->db->bind(':contact_email', $data['contact_email']);
+
+        //Execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
